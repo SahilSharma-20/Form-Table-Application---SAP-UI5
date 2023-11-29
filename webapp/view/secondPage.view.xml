@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" controllerName="sform.form.controller.secondPage" displayBlock="true">
+  <App id="_IDGenApp1">
+    <pages>
+      <Page id="_IDGenPage1" title="Second Page">
+        <headerContent>
+          <Button id="_IDGenButton1" text="Back" icon="sap-icon://nav-back" press="onBackPress"/>
+        </headerContent>
+        <content>
+          <IconTabBar id="iconTabBar" expandable="false" backgroundDesign="Transparent" select="onTabSelect">
+            <items>
+              <IconTabFilter text="Form" key="formTab"/>
+              <IconTabFilter text="Records" key="recordsTab"/>
+            </items>
+          </IconTabBar>
+          <VBox id="formSection" class="sapUiSmallMargin">
+            <Title text="Form" level="H3" class="section-title"/>
+            <f:SimpleForm id="secondPageForm" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false">
+              <Label id="_IDGenLabel1" text="Product ID"/>
+              <Input id="productIdInput" class="input-box"/>
+              <Label id="_IDGenLabel2" text="Manufacture Date"/>
+              <DatePicker id="manufactureDateInput" class="input-box"/>
+              <Label id="_IDGenLabel3" text="Rating Of Products"/>
+              <RatingIndicator id="ratingInput"/>
+              <Label id="_IDGenLabel4" text="Manufacture Cost"/>
+              <Input id="manufactureCostInput" class="input-box"/>
+            </f:SimpleForm>
+            <Button id="_IDGenButton2" text="Save" press="onSavePress" class="center-button save-button"/>
+          </VBox>
+          <VBox id="recordsSection" class="sapUiSmallMargin" visible="false">
+            <Button icon="sap-icon://action-settings" press="onSettingsPress" class="settings-button"/>
+            <Title text="Records" level="H3" class="section-title"/>
+            <table:Table id="dataTable" visible="true"  rows="{/data}">
+              <table:columns>
+                <table:Column id="_IDGenColumn1">
+                  <Label id="_IDGenLabel5" text="Product ID" />
+                  <table:template>
+                    <Text id="_IDGenText1" text="{ProductId}"/>
+                  </table:template>
+                </table:Column>
+                <table:Column id="_IDGenColumn2">
+                  <Label id="_IDGenLabel6" text="Manufacture Date"/>
+                  <table:template>
+                    <Text id="_IDGenText2" text="{ManufactureDate}"/>
+                  </table:template>
+                </table:Column>
+                <table:Column id="_IDGenColumn3">
+                  <Label id="_IDGenLabel7" text="Rating Of Products"/>
+                  <table:template>
+                    <Text id="_IDGenText3" text="{Rating}"/>
+                  </table:template>
+                </table:Column>
+                <table:Column id="_IDGenColumn4">
+                  <Label id="_IDGenLabel8" text="Manufacture Cost"/>
+                  <table:template>
+                    <Text id="_IDGenText4" text="{ManufactureCost}"/>
+                  </table:template>
+                </table:Column>
+              </table:columns>
+            </table:Table>
+          </VBox>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

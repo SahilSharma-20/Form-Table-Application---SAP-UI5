@@ -1,0 +1,133 @@
+{
+  "_version": "1.57.0",
+  "sap.app": {
+    "id": "sform.form",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.3",
+      "toolsId": "cd5eb71f-659e-4a7d-9242-04f19d9eac93"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.117.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sform.form.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "settings": {
+          "metadataUrlParams": {
+            "sap-documentation": "heading"
+          }
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "sform.form.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RoutesimpleForm",
+          "pattern": ":?query:",
+          "target": [
+            "TargetsimpleForm"
+          ]
+        },
+        {
+          "name": "secondPage",
+          "pattern": "secondPage",
+          "target": [
+            "TargetsecondPage"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetsimpleForm": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "simpleForm",
+          "viewName": "simpleForm"
+        },
+        "TargetsecondPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewName": "secondPage"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sform.form.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "mainService": {
+    "uri": "/odata/service",
+    "type": "OData",
+    "settings": {
+      "odataVersion": "2.0"
+    }
+  }
+}

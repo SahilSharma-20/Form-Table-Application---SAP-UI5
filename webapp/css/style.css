@@ -1,0 +1,70 @@
+/* Add this CSS code for better formatting */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure equal height for columns */
+    padding: 1rem;
+  }
+  
+  .form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .column-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .records-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Dark grey color */
+    margin: 1rem 0;
+  }
+  
+  .input-box {
+    width: 100%; /* Make all input boxes the same width */
+    margin: 0.5rem 0; /* Adjust spacing between input boxes */
+  }
+  
+  .center-button {
+    display: block;
+    margin: 1rem auto;
+  }
+  
+  .save-button {
+    font-size: 16px;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  /* table th:nth-child(1),
+  table td:nth-child(1) {
+    display: none; /* Hide the first column in the table (S. No.) 
+  } */
+  .records-panel {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  .panel-button {
+    float: right;
+  }
+ .settings-toolbar {
+    text-align: right;
+    padding: 0.5rem;
+  }
+
+/* Style the settings icon */
+ .settings-toolbar .sapMBtnIcon {
+    font-size: 1.5rem;
+  } 
+  

@@ -1,0 +1,90 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  controllerName="sform.form.controller.simpleForm">
+  <Page title="{i18n>title}">
+    <content>
+      <Button text="Next Page" press="onNextPagePress" class="right-top-button"/>
+      <VBox class="sapUiSmallMargin">
+      <Panel expandable="true" expanded="true" headerText="Form" class="form-panel" headerToolbar="{formHeader}">
+      <content>
+        <HBox class="form-container">
+          <VBox class="form-column">
+            <Label text="Name*"/>
+            <Input id="nameInput" class="input-box"/>
+            <Label text="Email"/>
+            <Input id="emailInput" class="input-box"/>
+            <Label text="Gender"/>
+            <RadioButtonGroup id="genderInput">
+              <buttons>
+                <RadioButton text="Male"/>
+                <RadioButton text="Female"/>
+              </buttons>
+            </RadioButtonGroup>
+            <Label text="Address"/>
+            <Input id="addressInput" class="input-box"/>
+          </VBox>
+          <VBox class="form-column">
+            <Label text="Product Name*"/>
+            <Input id="productNameInput" class="input-box"/>
+            <Label text="Total Cost"/>
+            <Input id="totalCostInput" class="input-box"/>
+            <Label text="Date of Delivery"/>
+            <DatePicker id="deliveryDateInput" class="input-box"/>
+          </VBox>
+        </HBox>
+        <Button text="Save" press="onSavePress" class="center-button save-button"/>
+        </content>
+      </Panel>
+        <Panel expandable="true" expanded="true" headerText="Records" class="records-panel" headerToolbar="{headerToolbar}">
+        <content>
+          <Table id="recordTable" items="{/data}" visible="{/tableVisible}">
+            <columns>
+              <Column>
+                <Label text="Serial Number"/>
+              </Column>
+              <Column>
+                <Label text="Name"/>
+              </Column>
+              <Column>
+                <Label text="Email"/>
+              </Column>
+              <Column>
+                <Label text="Gender"/>
+              </Column>
+              <Column>
+                <Label text="Address"/>
+              </Column>
+              <Column>
+                <Label text="Product Name"/>
+              </Column>
+              <Column>
+                <Label text="Total Cost"/>
+              </Column>
+              <Column>
+                <Label text="Date of Delivery"/>
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{path: 'SerialNumber', formatter: '.formatSerialNumber'}"/>
+                  <Text text="{Name}"/>
+                  <Text text="{Email}"/>
+                  <Text text="{Gender}"/>
+                  <Text text="{Address}"/>
+                  <Text text="{ProductName}"/>
+                  <Text text="{TotalCost}"/>
+                  <Text text="{DateOfDelivery}"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+          </content>
+        </Panel>
+        
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>
